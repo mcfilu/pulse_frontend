@@ -6,13 +6,7 @@ interface UserDetailsProps {
 
 const UserDetails:React.FC<UserDetailsProps> = ({id_val}) => {
 
-    if (isNaN(id_val)) {
-        return (
-            <div className='w-full h-full flex items-center justify-center bg-white bg-opacity-40 rounded-xl'>
-                <p className='text-white text-[3vh] font-poppins'>Wrong type of the parameter passed to the url. Make sure you put the number</p>
-            </div>
-        );
-    }
+    
     const [userData, setUserData] = useState<any>(null);
 
     useEffect(() => {
