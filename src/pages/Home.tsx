@@ -1,15 +1,13 @@
 import React from 'react';
 
-const Home = () => {
+// Home page, with nice background and 2 headings
+const Home:React.FC = () => {
     return (
-      
-        <div className='w-screen h-screen bg- flex'>
-          <div className='w-1/2 h-1/2'>
-            <h1 className='text-black text-[3vh]'>Welcome to the Pulse.io Front-End Application</h1>
+        <div className='w-screen h-screen bg-gradient-to-tr from-zinc-100 via-black to-zinc-100 flex flex-col justify-center items-center'>
+            <h1 className='text-white text-[3vh] font-poppins'>Welcome to the Pulse.io Front-End Application</h1>
+            <h2 className='text-white text-[3vh] mt-[2vh] font-poppins'>In order to see the users details please go to: /users/id </h2>
           </div>
-        </div>
-
-      
+        
     );
   }
 
