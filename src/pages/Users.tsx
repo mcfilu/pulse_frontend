@@ -7,7 +7,7 @@ import UserError from '../components/users/UserError';
 const Users: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const id_num:number = Number(id);
-    if (isNaN(id_num)) {
+    if (isNaN(id_num) || id_num < 1) {
         return (
             <div className='w-screen h-screen bg-gradient-to-tr from-zinc-100 via-black to-zinc-100 grid grid-cols-2 justify-center items-center p-[10vh] gap-[4vh]'>
                 <UserWelcome/>
