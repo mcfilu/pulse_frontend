@@ -28,6 +28,8 @@ const UserDetails:React.FC<UserDetailsProps> = ({id_val}) => {
 
     }, [id_val])
 
+    if (apiError) return <UserError errorMessage="There is an error coming from the back-end response."/>
+
     if (!userData) {
         return (
             <div className='w-full h-full flex items-center justify-center bg-white bg-opacity-40 rounded-xl'>
@@ -35,8 +37,6 @@ const UserDetails:React.FC<UserDetailsProps> = ({id_val}) => {
             </div>
         );
     }
-
-    if (apiError) return <UserError errorMessage="There is an error coming from the back-end response."/>
 
     return(
         <div className='w-full h-full flex flex-col items-center justify-center bg-white bg-opacity-40 rounded-xl'>

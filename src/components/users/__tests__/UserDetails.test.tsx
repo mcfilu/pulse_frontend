@@ -30,6 +30,18 @@ describe('UserDetails component', () => {
 
     expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users/1');
   });
+  test('renders UserError component with error message when API call fails', async () => {
+    // Mock the fetch call to simulate an error response
+    jest.spyOn(global, 'fetch').mockRejectedValueOnce(new Error('Failed to fetch'));
+
+    // Render the UserDetails component with a mock id_val
+    render(<UserDetails id_val="1" />);
+
+    // Wait for the error message to be displayed
+    await waitFor(() => {
+      expect(screen.getByText('There is an error coming from the back-end response.')).toBeInTheDocument();
+    });
+  });
 
   
 });
