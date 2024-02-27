@@ -1,13 +1,19 @@
-// UserError.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
-import UserError from '../../components/users/UserError';
+import { MemoryRouter } from 'react-router-dom';
+import Users from '../Users';
 
-test('renders user error message with certain given message value', () => {
-    const testErrorMessage = 'This is a test error message I have selected.';
-    render(<UserError errorMessage={testErrorMessage} />);
-  
-    const errorMessageElement = screen.getByText(testErrorMessage);
-    expect(errorMessageElement).toBeInTheDocument();
+describe('Users component', () => {
+  it('should render UserError component with error message for "abc" param', () => {
+    render(
+      <MemoryRouter initialEntries={['/abc']}>
+        <Users />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText('Wrong type of the parameter passed to the url. Make sure you put the positive integer.')).toBeInTheDocument();
   });
+
+  
+});
