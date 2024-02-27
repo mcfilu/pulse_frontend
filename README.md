@@ -53,7 +53,7 @@ Navigate to the project directory:
 
 ```bash
 Copy code
-cd Pulse-frontend
+cd pulse-frontend
 ```
 
 ## Install dependencies:
@@ -61,6 +61,12 @@ cd Pulse-frontend
 ```bash
 Copy code
 npm install
+```
+## Build for the production 
+
+```bash
+Copy code
+npm run build
 ```
 
 ## Start the development server:
