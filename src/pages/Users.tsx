@@ -5,7 +5,11 @@ import UserDetails from '../components/users/UserDetails';
 import UserError from '../components/users/UserError';
 
 const Users: React.FC = () => {
-    const { id } = useParams<{id: string }>();
+    type userParams = {
+        id: string | undefined;
+    }
+
+    const { id } = useParams<userParams>();
     const id_num:number = Number(id);
     if (isNaN(id_num) || id_num < 1) {
         return (

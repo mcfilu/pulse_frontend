@@ -3,7 +3,7 @@ import UserError from "./UserError";
 
 
 interface UserDetailsProps {
-    id_val: string
+    id_val: string | undefined
 }
 
 const UserDetails:React.FC<UserDetailsProps> = ({id_val}) => {
