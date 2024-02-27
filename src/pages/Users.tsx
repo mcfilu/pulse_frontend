@@ -13,7 +13,7 @@ const Users: React.FC = () => {
     const id_num:number = Number(id);
     if (isNaN(id_num) || id_num < 1) {
         return (
-            <div className='w-screen h-screen bg-gradient-to-tr from-zinc-100 via-black to-zinc-100 grid grid-cols-2 justify-center items-center p-[10vh] gap-[4vh]'>
+            <div className='w-screen min-h-screen bg-gradient-to-tr from-zinc-100 via-black to-zinc-100 grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 justify-center items-center p-[10vh] gap-[4vh] py-[2vh]'>
                 <UserWelcome/>
                 <UserError errorMessage="Wrong type of the parameter passed to the url. Make sure you put the positive integer."/>
             
